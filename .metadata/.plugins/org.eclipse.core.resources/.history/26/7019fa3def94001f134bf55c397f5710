@@ -1,0 +1,52 @@
+package FileSearch;
+
+import java.io.File;
+
+public class FileSearch {
+    
+    // Main entry point of the program
+    public static void main(String[] args) {
+        if (args.length < 2) {
+            System.out.println("Usage: java FileSearch <directory> <filename>");
+            return;
+        }
+        
+        String directoryPath = args[0];
+        String fileName = args[1];
+
+        File directory = new File(directoryPath);
+        if (!directory.exists() || !directory.isDirectory()) {
+            System.out.println("The specified directory does not exist or is not a directory.");
+            return;
+        }
+
+        // Call the recursive search method
+        boolean found = searchFile(directory, fileName);
+        
+        if (!found) {
+            System.out.println("File not found.");
+        }
+    }
+
+    // Recursive method to search for the file
+    private static boolean searchFile(File directory, String fileName) {
+        File[] files = directory.listFiles();
+        if (files == null) {
+            return false;
+        }
+
+        for (File file : files) {
+            if (file.isDirectory()) {
+                // Recursive call to search in subdirectories
+                if (searchFile(file, fileName)) {
+                    return true;
+                }
+            } else if (file.getName().equals(fileName)) {
+                // File found
+                System.out.println("File found: " + file.getAbsolutePath());
+                return true;
+            }
+        }
+        return false;
+    }
+}

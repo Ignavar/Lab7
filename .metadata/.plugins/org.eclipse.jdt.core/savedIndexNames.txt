@@ -1,0 +1,21 @@
+INDEX VERSION 1.134+/home/ignavar17/Documents/Software Construction/lab7/.metadata/.plugins/org.eclipse.jdt.core
+2378745581.index
+2411174874.index
+3044733273.index
+10408360.index
+3747736953.index
+1408487956.index
+1827584515.index
+1212880327.index
+1865797976.index
+1234216054.index
+2378434430.index
+1700820813.index
+1957087401.index
+3397010121.index
+2348803190.index
+716651236.index
+3710817474.index
+2858982697.index
+3683605311.index
+123152322.index
